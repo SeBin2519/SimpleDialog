@@ -11,6 +11,7 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
     Button but;
     String[] items={"젤리빈", "킷켓", "롤리팝","마시멜로우"};
+    boolean[] checkArr={false,true,false,false};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,12 +32,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         AlertDialog.Builder dialog =new AlertDialog.Builder(this);//getApplicationContext(): 현재 엑티비티의 문맥을 반환 , 현재클래스를 반환
         dialog.setTitle("First Dialog");
         //dialog.setMessage("This is a message part!");
-        dialog.setItems(items, new DialogInterface.OnClickListener() {
+
+        /* dialog.setItems(items, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) { //which : 항목의 인덱스번호
                 but.setText(items[which]);
             }
-        });//항목을 선택하면 익명클래스 실행
+        });//항목을 선택하면 익명클래스 실행 */
+
+       /* dialog.setSingleChoiceItems(items, 0, new DialogInterface.OnClickListener(){ //0으로 하면 실행시 1번째가 선택됨
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                but.setText(items[which]);
+            }
+        });*/
+
 
         dialog.setIcon(R.drawable.first_icon);
        dialog.setPositiveButton("확인", new DialogInterface.OnClickListener() {
